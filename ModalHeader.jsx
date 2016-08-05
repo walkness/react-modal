@@ -14,7 +14,7 @@ const ModalHeader = (props, context) => {
         aria-label='Close'
         onClick={ handleModalClose }>
 
-          <span ariaHidden='true'>&times;</span>
+          <span aria-hidden='true'>&times;</span>
 
       </button>
 

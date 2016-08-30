@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
 
 const ModalHeader = (props, context) => {
-
   const { modalTitle, handleModalClose } = context;
 
   return (
     <div className='modal-header'>
 
-      <button 
+      <button
         type='button'
         className='close'
         data-dismiss='modal'

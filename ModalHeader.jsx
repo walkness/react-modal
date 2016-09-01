@@ -1,20 +1,20 @@
 import React, { PropTypes } from 'react';
 
 const ModalHeader = (props, context) => {
-
   const { modalTitle, handleModalClose } = context;
 
   return (
     <div className='modal-header'>
 
-      <button 
+      <button
         type='button'
         className='close'
         data-dismiss='modal'
         aria-label='Close'
-        onClick={ handleModalClose }>
+        onClick={handleModalClose}
+      >
 
-          <span aria-hidden='true'>&times;</span>
+        <span aria-hidden='true'>&times;</span>
 
       </button>
 
@@ -24,6 +24,10 @@ const ModalHeader = (props, context) => {
 
     </div>
   );
+};
+
+ModalHeader.propTypes = {
+  children: PropTypes.node,
 };
 
 ModalHeader.contextTypes = {

@@ -3,8 +3,13 @@ import React, { PropTypes } from 'react';
 import SubmitButton from '../Forms/SubmitButton';
 
 const ModalFooter = (props, context) => {
-
-  const { closeButtonTitle, submitButtonTitle, submitButtonEnabled, isSubmitting, children, onSubmitClick } = props;
+  const {
+    closeButtonTitle,
+    submitButtonTitle,
+    submitButtonEnabled,
+    isSubmitting,
+    children,
+    onSubmitClick } = props;
 
   const { handleModalClose } = context;
 
@@ -15,21 +20,23 @@ const ModalFooter = (props, context) => {
         type='button'
         className='btn btn-default'
         data-dismiss='modal'
-        onClick={ handleModalClose }>
+        onClick={handleModalClose}
+      >
         { closeButtonTitle }
       </button>
 
       <SubmitButton
-        label={ submitButtonTitle }
-        enabled={ submitButtonEnabled }
-        isSubmitting={ isSubmitting }
-        onClick={ onSubmitClick }/>
+        label={submitButtonTitle}
+        enabled={submitButtonEnabled}
+        isSubmitting={isSubmitting}
+        onClick={onSubmitClick}
+      />
 
       { children }
 
     </div>
-  )
-}
+  );
+};
 
 ModalFooter.propTypes = {
   closeButtonTitle: PropTypes.string,
@@ -37,18 +44,19 @@ ModalFooter.propTypes = {
   submitButtonEnabled: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   onSubmitClick: PropTypes.func,
-}
+  children: PropTypes.node,
+};
 
 ModalFooter.defaultProps = {
   closeButtonTitle: 'Close',
   submitButtonTitle: 'Submit',
   submitButtonEnabled: true,
   isSubmitting: false,
-  onSubmitClick: (e) => {},
-}
+  onSubmitClick: () => {},
+};
 
 ModalFooter.contextTypes = {
   handleModalClose: PropTypes.func.isRequired,
-}
+};
 
 export default ModalFooter;

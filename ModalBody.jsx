@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const ModalBody = (props, context) => {
-
+const ModalBody = (props) => {
   const { children } = props;
 
   return (
@@ -10,7 +9,11 @@ const ModalBody = (props, context) => {
       { children }
 
     </div>
-  )
-}
+  );
+};
+
+ModalBody.propTypes = {
+  children: PropTypes.node,
+};
 
 export default ModalBody;

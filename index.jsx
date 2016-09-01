@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import classNames from 'classnames';
 
 import ModalHeader from './ModalHeader';
 
@@ -11,8 +12,11 @@ export { default as ModalFooter } from './ModalFooter';
 class Modal extends Component {
 
   static propTypes = {
+    id: PropTypes.string,
+    title: PropTypes.string,
     handleClose: PropTypes.func.isRequired,
     display: PropTypes.bool,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
@@ -28,11 +32,10 @@ class Modal extends Component {
     return {
       handleModalClose: this.props.handleClose,
       modalTitle: this.props.title,
-    }
+    };
   }
 
   render() {
-
     const { display, children } = this.props;
 
     const modalProps = {};
@@ -42,20 +45,21 @@ class Modal extends Component {
       <ReactCSSTransitionGroup
         transitionName='modal'
         transitionEnterTimeout={300}
-        transitionLeaveTimeout={300}>
+        transitionLeaveTimeout={300}
+      >
 
         { display ?
-          <div className={`modal fade${ display ? ' in' : '' }`} {...modalProps}>
+          <div className={classNames('modal', 'fade', { in: display })} {...modalProps}>
 
-              <div className='modal-dialog'>
-                <div className='modal-content'>
+            <div className='modal-dialog'>
+              <div className='modal-content'>
 
-                  <ModalHeader />
+                <ModalHeader />
 
-                  { children }
+                { children }
 
-                </div>
               </div>
+            </div>
 
           </div>
         : null }

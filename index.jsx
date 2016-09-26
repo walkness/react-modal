@@ -17,10 +17,12 @@ class Modal extends Component {
     handleClose: PropTypes.func.isRequired,
     display: PropTypes.bool,
     children: PropTypes.node,
+    size: PropTypes.oneOf(['lg', 'sm', 'default']),
   };
 
   static defaultProps = {
     display: false,
+    size: 'default',
   };
 
   static childContextTypes = {
@@ -36,7 +38,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { display, children } = this.props;
+    const { display, children, size } = this.props;
 
     const modalProps = {};
     if (this.props.id) modalProps.id = this.props.id;
@@ -51,7 +53,7 @@ class Modal extends Component {
         { display ?
           <div className={classNames('modal', 'fade', { in: display })} {...modalProps}>
 
-            <div className='modal-dialog'>
+            <div className={classNames('modal-dialog', { [`modal-${size}`]: size !== 'default' })}>
               <div className='modal-content'>
 
                 <ModalHeader />

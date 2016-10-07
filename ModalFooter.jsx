@@ -18,7 +18,7 @@ const ModalFooter = (props, context) => {
 
       <button
         type='button'
-        className='btn btn-default'
+        className='btn btn-secondary'
         data-dismiss='modal'
         onClick={handleModalClose}
       >

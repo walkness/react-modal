@@ -6,6 +6,8 @@ const ModalHeader = (props, context) => {
   return (
     <div className='modal-header'>
 
+      <h4 className='modal-title'>{ modalTitle }</h4>
+
       <button
         type='button'
         className='close'
@@ -17,8 +19,6 @@ const ModalHeader = (props, context) => {
         <span aria-hidden='true'>&times;</span>
 
       </button>
-
-      <h4 className='modal-title'>{ modalTitle }</h4>
 
       { props.children }
 

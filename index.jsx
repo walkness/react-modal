@@ -52,11 +52,11 @@ class Modal extends Component {
       >
 
         { display ?
-          <div key='backdrop' className={classNames('modal-backdrop', 'fade', { in: display })} />
+          <div key='backdrop' className={classNames('modal-backdrop', 'fade', { show: display })} />
         : null }
 
         { display ?
-          <div className={classNames('modal', className, 'fade', { in: display })} {...modalProps}>
+          <div className={classNames('modal', className, 'fade', { show: display })} {...modalProps}>
 
             <div className={classNames('modal-dialog', { [`modal-${size}`]: size !== 'default' })}>
               <div className='modal-content'>

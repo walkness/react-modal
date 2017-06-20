@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import SubmitButton from 'Components/SubmitButton';
+import SubmitButton from '../SubmitButton';
 
 const ModalFooter = (props, context) => {
   const {

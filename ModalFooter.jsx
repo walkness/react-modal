@@ -46,37 +46,25 @@ const ModalFooter = (props, context) => {
 ModalFooter.propTypes = {
   children: PropTypes.node,
   closeButtonTitle: PropTypes.string,
-<<<<<<< HEAD
-  submitButtonTitle: PropTypes.string,
-  submitButtonEnabled: PropTypes.bool,
-  submitButtonVariant: PropTypes.oneOf([
-    'primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link',
-  ]),
-  submitButtonType: PropTypes.string,
-=======
->>>>>>> temp
   isSubmitting: PropTypes.bool,
   onSubmitClick: PropTypes.func,
   submitButtonEnabled: PropTypes.bool,
   submitButtonTitle: PropTypes.string,
   submitButtonType: PropTypes.string,
+  submitButtonVariant: PropTypes.oneOf([
+    'primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link',
+  ]),
 };
 
 ModalFooter.defaultProps = {
   children: null,
   closeButtonTitle: 'Close',
-<<<<<<< HEAD
-  submitButtonTitle: 'Submit',
-  submitButtonEnabled: true,
-  submitButtonType: 'submit',
-  submitButtonVariant: 'primary',
-=======
->>>>>>> temp
   isSubmitting: false,
   onSubmitClick: () => {},
   submitButtonEnabled: true,
   submitButtonTitle: 'Submit',
   submitButtonType: 'submit',
+  submitButtonVariant: 'primary',
 };
 
 ModalFooter.contextTypes = {

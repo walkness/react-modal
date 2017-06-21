@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 
+
 const ModalHeader = (props, context) => {
   const { modalTitle, handleModalClose } = context;
 
@@ -28,6 +29,10 @@ const ModalHeader = (props, context) => {
 
 ModalHeader.propTypes = {
   children: PropTypes.node,
+};
+
+ModalHeader.defaultProps = {
+  children: null,
 };
 
 ModalHeader.contextTypes = {

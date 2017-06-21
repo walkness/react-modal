@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
-import SubmitButton from '../SubmitButton';
+import SubmitButton from 'AppComponents/SubmitButton';
+
 
 const ModalFooter = (props, context) => {
   const {
@@ -43,26 +44,39 @@ const ModalFooter = (props, context) => {
 };
 
 ModalFooter.propTypes = {
+  children: PropTypes.node,
   closeButtonTitle: PropTypes.string,
+<<<<<<< HEAD
   submitButtonTitle: PropTypes.string,
   submitButtonEnabled: PropTypes.bool,
   submitButtonVariant: PropTypes.oneOf([
     'primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link',
   ]),
   submitButtonType: PropTypes.string,
+=======
+>>>>>>> temp
   isSubmitting: PropTypes.bool,
   onSubmitClick: PropTypes.func,
-  children: PropTypes.node,
+  submitButtonEnabled: PropTypes.bool,
+  submitButtonTitle: PropTypes.string,
+  submitButtonType: PropTypes.string,
 };
 
 ModalFooter.defaultProps = {
+  children: null,
   closeButtonTitle: 'Close',
+<<<<<<< HEAD
   submitButtonTitle: 'Submit',
   submitButtonEnabled: true,
   submitButtonType: 'submit',
   submitButtonVariant: 'primary',
+=======
+>>>>>>> temp
   isSubmitting: false,
   onSubmitClick: () => {},
+  submitButtonEnabled: true,
+  submitButtonTitle: 'Submit',
+  submitButtonType: 'submit',
 };
 
 ModalFooter.contextTypes = {

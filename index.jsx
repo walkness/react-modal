@@ -12,18 +12,22 @@ export { default as ModalFooter } from './ModalFooter';
 class Modal extends Component {
 
   static propTypes = {
-    id: PropTypes.string,
-    title: PropTypes.string,
-    handleClose: PropTypes.func.isRequired,
-    display: PropTypes.bool,
     children: PropTypes.node,
-    size: PropTypes.oneOf(['lg', 'sm', 'default']),
     className: PropTypes.string,
+    display: PropTypes.bool,
+    handleClose: PropTypes.func.isRequired,
+    id: PropTypes.string,
+    size: PropTypes.oneOf(['lg', 'sm', 'default']),
+    title: PropTypes.string,
   };
 
   static defaultProps = {
+    children: null,
+    className: null,
     display: false,
+    id: null,
     size: 'default',
+    title: null,
   };
 
   static childContextTypes = {

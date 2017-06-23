@@ -5,6 +5,8 @@ import classNames from 'classnames';
 
 import ModalHeader from './ModalHeader';
 
+import './styles.scss';
+
 export { default as ModalHeader } from './ModalHeader';
 export { default as ModalBody } from './ModalBody';
 export { default as ModalFooter } from './ModalFooter';
@@ -57,11 +59,19 @@ class Modal extends Component {
       >
 
         { display ?
-          <div key='backdrop' className={classNames('modal-backdrop', 'fade', { show: display })} />
+          <div
+            key='backdrop'
+            className={classNames('modal-backdrop', 'fade', { show: display })}
+            styleName='backdrop'
+          />
         : null }
 
         { display ?
-          <div className={classNames('modal', className, 'fade', { show: display })} {...modalProps}>
+          <div
+            className={classNames('modal', className, 'fade', { show: display })}
+            styleName='modal'
+            {...modalProps}
+          >
 
             <div className={classNames('modal-dialog', { [`modal-${size}`]: size !== 'default' })}>
               <div className='modal-content'>

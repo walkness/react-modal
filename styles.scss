@@ -1,0 +1,51 @@
+:global(.modal) {
+  &.modal {
+    $transition-speed: .3s;
+    display: block;
+
+    &:global(.modal-enter) {
+      opacity: 0;
+      transform: translateY(-25%);
+    }
+
+    &:global(.modal-enter-active) {
+      opacity: 1;
+      transform: translateY(0);
+      transition: $transition-speed;
+    }
+
+    &:global(.modal-leave) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:global(.modal-leave-active) {
+      opacity: 0;
+      transform: translateY(-25%);
+      transition: $transition-speed;
+    }
+  }
+}
+
+.backdrop {
+  $opacity: .5;
+  $transition: opacity 300ms ease;
+
+  &:global(.modal-enter) {
+    opacity: 0;
+
+    &:global(.modal-enter-active) {
+      opacity: $opacity;
+      transition: $transition;
+    }
+  }
+
+  &:global(.modal-leave) {
+    opacity: $opacity;
+
+    &:global(.modal-leave-active) {
+      opacity: 0;
+      transition: $transition;
+    }
+  }
+}

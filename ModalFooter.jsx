@@ -35,7 +35,7 @@ const ModalFooter = (props, context) => {
         isSubmitting={isSubmitting}
         onClick={onSubmitClick}
         type={submitButtonType}
-        style={submitButtonVariant}
+        variant={submitButtonVariant}
       />
 
       { children }

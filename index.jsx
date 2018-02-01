@@ -21,7 +21,7 @@ class Modal extends Component {
     handleClose: PropTypes.func.isRequired,
     id: PropTypes.string,
     size: PropTypes.oneOf(['lg', 'sm', 'default']),
-    title: PropTypes.string,
+    title: PropTypes.node,
   };
 
   static defaultProps = {
@@ -35,7 +35,7 @@ class Modal extends Component {
 
   static childContextTypes = {
     handleModalClose: PropTypes.func,
-    modalTitle: PropTypes.string,
+    modalTitle: PropTypes.node,
   };
 
   getChildContext() {

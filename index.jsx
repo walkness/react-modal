@@ -1,7 +1,10 @@
+/* globals window */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classNames from 'classnames';
+import { autobind } from 'core-decorators';
 
 import ModalHeader from './ModalHeader';
 
@@ -43,6 +46,31 @@ class Modal extends Component {
       handleModalClose: this.props.handleClose,
       modalTitle: this.props.title,
     };
+  }
+
+  componentDidMount() {
+    if (this.props.display) {
+      window.addEventListener('keydown', this.onKeyPress);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!this.props.display && nextProps.display) {
+      window.addEventListener('keydown', this.onKeyPress);
+    } else if (this.props.display && !nextProps.display) {
+      window.removeEventListener('keydown', this.onKeyPress);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKeyPress);
+  }
+
+  @autobind
+  onKeyPress(e) {
+    if (e.keyCode === 27) {
+      this.props.handleClose();
+    }
   }
 
   render() {

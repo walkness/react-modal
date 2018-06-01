@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group';
 import classNames from 'classnames';
 import { autobind } from 'core-decorators';
 
@@ -80,7 +80,7 @@ class Modal extends Component {
     if (this.props.id) modalProps.id = this.props.id;
 
     return (
-      <ReactCSSTransitionGroup
+      <CSSTransitionGroup
         transitionName='modal'
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}
@@ -114,7 +114,7 @@ class Modal extends Component {
           </div>
         : null }
 
-      </ReactCSSTransitionGroup>
+      </CSSTransitionGroup>
     );
   }
 }
